@@ -1,0 +1,51 @@
+mongodb+srv://bhanujchowdhary:iiyLRcW7TqwhFC3P@cluster0.qbj67ur.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+iiyLRcW7TqwhFC3P
+
+
+
+            <table className="table">
+                <thead>
+                <tr>
+                    <th>
+                    <label>
+                        <input type="checkbox" className="checkbox" />
+                    </label>
+                    </th>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Stream</th>
+                    <th />
+                </tr>
+                </thead>
+                <tbody>
+                    {users.map((rs) => (
+                    <tr className="hover" key={rs._id}>
+                        <th>
+                        <label>
+                            <input type="checkbox" className="checkbox" />
+                        </label>
+                        </th>
+                        <td>
+                            <div className="flex items-center gap-3">
+                                <div className="avatar">
+                                <div className="mask mask-squircle w-12 h-12">
+                                </div>
+                                </div>
+                                <div>
+                                <div className="font-bold">{rs.name}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            {rs.phoneNumber}
+                        </td>
+                        <td>{rs.stream}</td>
+                        <th>
+                            
+                        </th>
+                    </tr>
+                    ))}                    
+                </tbody>
+            </table>
