@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || '';
+console.log(`Base URL: ${baseUrl}`); // Log the base URL
 
 const getUsers = async () => {
   try {
@@ -9,11 +10,15 @@ const getUsers = async () => {
       cache: 'no-store',
     });
 
+    console.log(`Fetch URL: ${baseUrl}/api/users`); // Log the fetch URL
+
     if (!res.ok) {
       throw new Error(`Failed to fetch users: ${res.status} - ${res.statusText}`);
     }
 
     const data = await res.json();
+    console.log('Fetched users:', data.users); // Log the fetched users
+
     return data.users || [];
   } catch (error) {
     console.error('Error loading users:', error);
@@ -86,4 +91,6 @@ export default function Userlist() {
     </table>
   );
 }
+
+
 
