@@ -8,6 +8,7 @@ const ContactForm = () => {
   const [stream, setStream] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false)
   const router = useRouter()
+  const apiurl = process.env.NEXT_PUBLIC_API_URL
   const handleSubmit = async (event) => {
     event.preventDefault();
     
@@ -24,7 +25,7 @@ const ContactForm = () => {
     }
 
     try {
-        const res = await fetch(process.env.NEXT_PUBLIC_API_URL, {
+        const res = await fetch(apiurl, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
