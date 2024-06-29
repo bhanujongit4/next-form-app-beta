@@ -1,19 +1,22 @@
 
 const getUsers = async () => {
-    try {
-        const res = await fetch("/api/users", {
-            cache: "no-store",
-        });
- 
-        if (!res.ok) {
-            throw new Error("Failed to fetch products");
-        }
- 
-        return res.json();
-    } catch (error) {
-        console.log("Error loading products: ", error);
+  try {
+    const res = await fetch('/api/users', {
+      cache: 'no-store',
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch users: ${res.status} - ${res.statusText}`);
     }
+
+    const data = await res.json();
+    return data.users || [];
+  } catch (error) {
+    console.error('Error loading users:', error);
+    throw error; // Rethrow the error to handle it further up the call stack
+  }
 };
+
  
 export default async function Userlist() {
     const { users } = await getUsers();
