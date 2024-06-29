@@ -1,24 +1,14 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 
-const getBaseUrl = () => {
-  if (process.env.NODE_ENV === 'development') {
-    return 'http://localhost:3000';
-  }
-  return process.env.NEXT_PUBLIC_VERCEL_URL || `https://${process.env.VERCEL_URL}`;
-};
-
 const getUsers = async () => {
-  const baseUrl = getBaseUrl();
-  console.log(`Base URL: ${baseUrl}`); // Log the base URL
-
   try {
-    const res = await fetch(`${baseUrl}/api/users`, {
+    const res = await fetch('/api/users', {
       cache: 'no-store',
     });
 
-    console.log(`Fetch URL: ${baseUrl}/api/users`); // Log the fetch URL
-    console.log(`Fetch response status: ${res.status}`);
+    console.log('Fetch URL: /api/users'); // Log the fetch URL
+    console.log(`Fetch response status: ${res.status}`); // Log the response status
 
     if (!res.ok) {
       throw new Error(`Failed to fetch users: ${res.status} - ${res.statusText}`);
@@ -30,7 +20,7 @@ const getUsers = async () => {
     return data.users || [];
   } catch (error) {
     console.error('Error loading users:', error);
-    return []; // Return an empty array if the fetch request fails
+    throw error; // Rethrow the error to handle it further up the call stack
   }
 };
 
@@ -99,5 +89,3 @@ export default function Userlist() {
     </table>
   );
 }
-
-
