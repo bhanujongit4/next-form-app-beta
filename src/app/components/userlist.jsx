@@ -1,7 +1,7 @@
-
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
 const getUsers = async () => {
   try {
-    const res = await fetch('https://next-form-app-beta-96va-pcfxvq8bo-bhanujongit4s-projects.vercel.app/api/users', {
+    const res = await fetch(`${baseUrl}/api/users`, {
       cache: 'no-store',
     });
 
