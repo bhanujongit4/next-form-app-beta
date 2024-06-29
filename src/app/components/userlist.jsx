@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import getUsers from './getUsers'; // Ensure this path is correct based on your project structure
+
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || '';
 
 const getUsers = async () => {
@@ -20,7 +20,6 @@ const getUsers = async () => {
     return []; // Return an empty array if the fetch request fails
   }
 };
-
 
 export default function Userlist() {
   const [users, setUsers] = useState([]);
@@ -87,3 +86,4 @@ export default function Userlist() {
     </table>
   );
 }
+
