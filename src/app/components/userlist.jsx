@@ -1,7 +1,7 @@
 
 const getUsers = async () => {
   try {
-    const res = await fetch('/api/users', {
+    const res = await fetch('https://next-form-app-beta-96va-pcfxvq8bo-bhanujongit4s-projects.vercel.app/api/users', {
       cache: 'no-store',
     });
 
