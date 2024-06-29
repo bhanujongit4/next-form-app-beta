@@ -1,7 +1,7 @@
-const apiurl= process.env.NEXT_PUBLIC_API_URL
+
 const getUsers = async () => {
     try {
-        const res = await fetch(apiurl, {
+        const res = await fetch("/api/users", {
             cache: "no-store",
         });
  
