@@ -14,11 +14,11 @@ export default function Home() {
       </Head>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 bg-cover bg-center" style={{ backgroundImage: "url('/hero-image.jpg')" }}>
-        <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">Biology Before Exams</h1>
-        <p className="text-xl text-white mt-4 md:text-2xl lg:text-3xl">Get The Best Possible Biology Education</p>
+     <section className="flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 bg-cover bg-center" style={{ backgroundImage: "url('/hero-image.jpg')" }}>
+        <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">Lead Manegment System</h1>
+        <p className="text-xl text-white mt-4 md:text-2xl lg:text-3xl">Hello World</p>
         <button className="bg-gray-900 text-white px-4 py-2 rounded-md mt-8 focus:outline-none hover:bg-blue-700">
-        <Link href={"https://www.youtube.com/watch?v=X8fN6klOF80"} target="_blank">Youtube</Link>
+        <Link href={"https://youtu.be/At8v_Yc044Y?si=IlHgDeskGomWGWur"} target="_blank">Random Test Link</Link>
         </button>
       </section>
   
